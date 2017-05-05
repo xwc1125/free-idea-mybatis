@@ -1,7 +1,7 @@
 <idea-plugin version="2" url="https://github.com/wuzhizhan/intellij-mybatis-plugin.git">
     <id>cn.wuzhizhan.plugin.mybatis</id>
     <name>Free MyBatis plugin</name>
-    <version>2016.1.2</version>
+    <version>2017.1.0</version>
     <vendor email="wuzhizhan@wuzhizhan.cn" url="https://github.com/wuzhizhan">wuzhizhan</vendor>
 
     <description><![CDATA[
@@ -25,49 +25,49 @@
     <depends optional="true">com.intellij.sql</depends>
     <depends optional="true">com.intellij.spring</depends>
     <extensions defaultExtensionNs="com.intellij">
-        <dom.fileDescription implementation="com.seventh7.mybatis.dom.description.MapperDescription"/>
-        <dom.fileDescription implementation="com.seventh7.mybatis.dom.description.ConfigurationDescription"/>
-        <definitionsSearch implementation="com.seventh7.mybatis.definitionsearch.MapperDefinitionSearch"/>
-        <projectService serviceImplementation="com.seventh7.mybatis.service.JavaService"/>
-        <projectService serviceImplementation="com.seventh7.mybatis.service.AnnotationService"/>
-        <projectService serviceImplementation="com.seventh7.mybatis.service.EditorService"/>
-        <projectService serviceImplementation="com.seventh7.mybatis.alias.AliasFacade"/>
-        <projectService serviceImplementation="com.seventh7.mybatis.locator.MapperLocator"/>
+        <dom.fileDescription implementation="cn.wuzhizhan.mybatis.dom.description.MapperDescription"/>
+        <dom.fileDescription implementation="cn.wuzhizhan.mybatis.dom.description.ConfigurationDescription"/>
+        <definitionsSearch implementation="cn.wuzhizhan.mybatis.definitionsearch.MapperDefinitionSearch"/>
+        <projectService serviceImplementation="cn.wuzhizhan.mybatis.service.JavaService"/>
+        <projectService serviceImplementation="cn.wuzhizhan.mybatis.service.AnnotationService"/>
+        <projectService serviceImplementation="cn.wuzhizhan.mybatis.service.EditorService"/>
+        <projectService serviceImplementation="cn.wuzhizhan.mybatis.alias.AliasFacade"/>
+        <projectService serviceImplementation="cn.wuzhizhan.mybatis.locator.MapperLocator"/>
         <codeInsight.lineMarkerProvider language="JAVA"
-                                        implementationClass="com.seventh7.mybatis.provider.MapperLineMarkerProvider"/>
+                                        implementationClass="cn.wuzhizhan.mybatis.provider.MapperLineMarkerProvider"/>
         <codeInsight.lineMarkerProvider language="XML"
-                                        implementationClass="com.seventh7.mybatis.provider.StatementLineMarkerProvider"/>
+                                        implementationClass="cn.wuzhizhan.mybatis.provider.StatementLineMarkerProvider"/>
         <codeInsight.lineMarkerProvider language="JAVA"
-                                        implementationClass="com.seventh7.mybatis.provider.InjectionLineMarkerProvider"/>
-        <applicationConfigurable instance="com.seventh7.mybatis.setting.MybatisConfigurable"/>
-        <applicationService serviceInterface="com.seventh7.mybatis.setting.MybatisSetting"
-                            serviceImplementation="com.seventh7.mybatis.setting.MybatisSetting"/>
+                                        implementationClass="cn.wuzhizhan.mybatis.provider.InjectionLineMarkerProvider"/>
+        <applicationConfigurable instance="cn.wuzhizhan.mybatis.setting.MybatisConfigurable"/>
+        <applicationService serviceInterface="cn.wuzhizhan.mybatis.setting.MybatisSetting"
+                            serviceImplementation="cn.wuzhizhan.mybatis.setting.MybatisSetting"/>
         <completion.contributor language="XML"
-                                implementationClass="com.seventh7.mybatis.contributor.TestParamContributor"/>
+                                implementationClass="cn.wuzhizhan.mybatis.contributor.TestParamContributor"/>
         <completion.contributor language="SQL"
-                                implementationClass="com.seventh7.mybatis.contributor.SqlParamCompletionContributor"
+                                implementationClass="cn.wuzhizhan.mybatis.contributor.SqlParamCompletionContributor"
                                 order="first"/>
-        <fileTemplateGroup implementation="com.seventh7.mybatis.template.MybatisFileTemplateDescriptorFactory"/>
-        <typedHandler implementation="com.seventh7.mybatis.action.MybatisTypedHandler" id="mybatis" order="first"/>
-        <defaultLiveTemplatesProvider implementation="com.seventh7.mybatis.template.SqlLiveTemplateProvider"/>
+        <fileTemplateGroup implementation="cn.wuzhizhan.mybatis.template.MybatisFileTemplateDescriptorFactory"/>
+        <typedHandler implementation="cn.wuzhizhan.mybatis.action.MybatisTypedHandler" id="mybatis" order="first"/>
+        <defaultLiveTemplatesProvider implementation="cn.wuzhizhan.mybatis.template.SqlLiveTemplateProvider"/>
         <refactoring.elementListenerProvider
-                implementation="com.seventh7.mybatis.refactoring.MapperRefactoringProvider"/>
+                implementation="cn.wuzhizhan.mybatis.refactoring.MapperRefactoringProvider"/>
         <localInspection language="JAVA" shortName="MybatisMapperMethodInspection"
                          displayName="Mapper method inspection"
                          groupName="Mybatis" enabledByDefault="true" level="ERROR"
-                         implementationClass="com.seventh7.mybatis.inspection.MapperMethodInspection"/>
+                         implementationClass="cn.wuzhizhan.mybatis.inspection.MapperMethodInspection"/>
         <localInspection language="XML" shortName="MybatisMapperXmlInspection" enabledByDefault="true" level="ERROR"
                          displayName="Mapper xml inspection"
                          groupName="Mybatis"
-                         implementationClass="com.seventh7.mybatis.inspection.MapperXmlInspection"/>
+                         implementationClass="cn.wuzhizhan.mybatis.inspection.MapperXmlInspection"/>
         <intentionAction>
-            <className>com.seventh7.mybatis.intention.GenerateParamAnnotationIntention</className>
+            <className>cn.wuzhizhan.mybatis.intention.GenerateParamAnnotationIntention</className>
         </intentionAction>
         <intentionAction>
-            <className>com.seventh7.mybatis.intention.GenerateStatementIntention</className>
+            <className>cn.wuzhizhan.mybatis.intention.GenerateStatementIntention</className>
         </intentionAction>
         <intentionAction order="first">
-            <className>com.seventh7.mybatis.intention.GenerateMapperIntention</className>
+            <className>cn.wuzhizhan.mybatis.intention.GenerateMapperIntention</className>
         </intentionAction>
     </extensions>
 </idea-plugin>
