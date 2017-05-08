@@ -10,6 +10,11 @@
       ]]></description>
 
     <change-notes><![CDATA[
+        <h4>2017.1.0</h4>
+        <ul>
+            <li>change a new package name to avoid conflict</li>
+            <li>fix some bug</li>
+        </ul>
        <h4>2016.1.2</h4>
       <ul>
           <li>fix some bugs</li>
